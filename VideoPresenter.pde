@@ -5,8 +5,6 @@ VideoSegment MenuVideo, ZoomVideo, Video1;
 
 ArrayList<Button> Buttons = new ArrayList<Button>();
 
-int millis = 0;
-
 // runs once
 void setup() {
   fullScreen();
@@ -56,7 +54,7 @@ void mousePressed() {
 
 // a collection of the different available video screens. Add a new name here when a new video is added
 enum VideoScreen {
-  Menu,
+    Menu,
     Zoom1,
     Video1
 }
