@@ -1,9 +1,9 @@
 
 
-class Button {
-  int _x, _y, _sizeX, _sizeY;
-  VideoSegment _video;
-  VideoScreen _videoScreen;
+public class Button {
+  private int _x, _y, _sizeX, _sizeY;
+  private VideoSegment _video;
+  private VideoScreen _videoScreen;
 
   /**
    Constructs a button object.
@@ -22,7 +22,7 @@ class Button {
   /**
    Displays the button if the button's videoScreen is the current video
    */
-  void Display() {
+  public void display() {
     if (CurrentVideo == _videoScreen) {
       // TODO: Improve the design of the button. Right now it is just a white rectangle
       rect(_x, _y, _sizeX, _sizeY);
@@ -32,7 +32,7 @@ class Button {
   /**
    True if the mouse cursor is inside the button, and the videoScreen is the current video being shown
    */
-  boolean IsMouseOver() {
+  public boolean isMouseOver() {
     if (CurrentVideo != _videoScreen) {
       return false;
     }
@@ -47,7 +47,7 @@ class Button {
   /**
    Stops the menu video and plays the button's target video
    */
-  void Click() {
+  public void click() {
     MenuVideo.stop();
     _video.movie.jump(0);
     _video.movie.play();

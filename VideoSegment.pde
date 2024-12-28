@@ -1,9 +1,8 @@
-import processing.video.*;
+import processing.video.Movie;
 
-class VideoSegment {
-  String fileName;
-  Movie movie;
-  VideoScreen videoEnum;
+public class VideoSegment {
+  public Movie movie;
+  public VideoScreen videoEnum;
 
   /**
    Constructs a VideoSegment object.
@@ -12,7 +11,6 @@ class VideoSegment {
    videoScreen is the screen this video is attached to. It is used when switching to the next video.
    */
   VideoSegment(PApplet parent, String fileName, VideoScreen videoScreen) {
-    this.fileName = fileName;
     this.videoEnum = videoScreen;
 
     movie = new Movie(parent, fileName);
@@ -22,7 +20,7 @@ class VideoSegment {
   /**
    Plays the video once, and then starts playing the nextVideo
    */
-  void play(VideoSegment nextVideo) {
+  public void play(VideoSegment nextVideo) {
     image(movie, 0, 0, width, height);
 
     if (movie.isPlaying() == false) {
@@ -36,7 +34,7 @@ class VideoSegment {
   /**
    Plays the movie infinitely. Can only proceed to another video if a button is pressed
    */
-  void loop() {
+  public void loop() {
     image(movie, 0, 0, width, height);
 
     if (movie.isPlaying() == false) {

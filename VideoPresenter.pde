@@ -5,6 +5,8 @@ VideoSegment MenuVideo, ZoomVideo, Video1;
 
 ArrayList<Button> Buttons = new ArrayList<Button>();
 
+int millis = 0;
+
 // runs once
 void setup() {
   fullScreen();
@@ -12,7 +14,7 @@ void setup() {
   MenuVideo = new VideoSegment(this, "menu-video.mp4", VideoScreen.Menu);
   ZoomVideo = new VideoSegment(this, "zoom1.mp4", VideoScreen.Zoom1);
   Video1 = new VideoSegment(this, "video1.mp4", VideoScreen.Video1);
-
+  
   Buttons.add(new Button(100, 100, 100, 100, ZoomVideo, VideoScreen.Menu));
 
   CurrentVideo = VideoScreen.Menu;
@@ -37,7 +39,7 @@ void draw() {
   }
 
   for (int i = 0; i < Buttons.size(); i++) {
-    Buttons.get(i).Display();
+    Buttons.get(i).display();
   }
 }
 
@@ -45,8 +47,8 @@ void draw() {
 // runs when a mouse button is pressed
 void mousePressed() {
   for (int i = 0; i < Buttons.size(); i++) {
-    if (Buttons.get(i).IsMouseOver()) {
-      Buttons.get(i).Click();
+    if (Buttons.get(i).isMouseOver()) {
+      Buttons.get(i).click();
     }
   }
 }
