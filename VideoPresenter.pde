@@ -1,22 +1,22 @@
 
-Videos CurrentVideo;
+VideoScreen CurrentVideo;
 
-VideoSegment menuVideo, zoomVideo, video1;
+VideoSegment MenuVideo, ZoomVideo, Video1;
 
-ArrayList<Button> buttons = new ArrayList<Button>();
+ArrayList<Button> Buttons = new ArrayList<Button>();
 
 // runs once
 void setup() {
   fullScreen();
 
-  CurrentVideo = Videos.Menu;
-  menuVideo = new VideoSegment(this, "menu-video.mp4", true, Videos.Menu);
-  zoomVideo = new VideoSegment(this, "zoom1.mp4", true, Videos.Zoom1);
-  video1 = new VideoSegment(this, "video1.mp4", true, Videos.Video1);
+  MenuVideo = new VideoSegment(this, "menu-video.mp4", VideoScreen.Menu);
+  ZoomVideo = new VideoSegment(this, "zoom1.mp4", VideoScreen.Zoom1);
+  Video1 = new VideoSegment(this, "video1.mp4", VideoScreen.Video1);
 
-  buttons.add(new Button(100, 100, 100, 100, zoomVideo, Videos.Menu));
+  Buttons.add(new Button(100, 100, 100, 100, ZoomVideo, VideoScreen.Menu));
 
-  menuVideo.movie.play();
+  CurrentVideo = VideoScreen.Menu;
+  MenuVideo.movie.play();
 }
 
 
@@ -26,35 +26,35 @@ void draw() {
   switch(CurrentVideo)
   {
   case Menu:
-    menuVideo.loop();
+    MenuVideo.loop();
     break;
   case Zoom1:
-    zoomVideo.play(video1);
+    ZoomVideo.play(Video1);
     break;
   case Video1:
-    video1.play(menuVideo);
+    Video1.play(MenuVideo);
     break;
   }
 
-  for (int i = 0; i < buttons.size(); i++) {
-    buttons.get(i).Display();
+  for (int i = 0; i < Buttons.size(); i++) {
+    Buttons.get(i).Display();
   }
 }
 
 
 // runs when a mouse button is pressed
 void mousePressed() {
-  for (int i = 0; i < buttons.size(); i++) {
-    if (buttons.get(i).IsMouseOver()) {
-      buttons.get(i).Click();
+  for (int i = 0; i < Buttons.size(); i++) {
+    if (Buttons.get(i).IsMouseOver()) {
+      Buttons.get(i).Click();
     }
   }
 }
 
 
-// a collection of the different available videos. Add a new name here when a new video is added
-enum Videos {
-    Menu,
+// a collection of the different available video screens. Add a new name here when a new video is added
+enum VideoScreen {
+  Menu,
     Zoom1,
     Video1
 }
