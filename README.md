@@ -5,7 +5,9 @@ A video can also play once and thereafter start playing the next video in a sequ
 
 The project is made with Processing4. See documentation and download the IDE here: https://processing.org/
 
-The videos are from various sample video sites.
+To build the program you need to install **Video Library for Processing 4**. You can do that inside Processing: Sketch &#8594; Import Library &#8594; Manage Libraries
+
+The example videos are from various sample video sites.
 
 
 
