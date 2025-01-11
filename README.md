@@ -33,7 +33,7 @@ The end result will be a flow that looks like this:
     Video2, // New Video2 video screen
   }
 ```
-3. Create a new VideoSegment object in the code VideoPresente.pde file
+3. Create a new VideoSegment object in the code VideoPresente.pde file. The "filename.mp4" must match the filenames you have in the data folder
 ``` Processing
   // In the top of the file  
   VideoSegment ZoomVideo2, Video2;
